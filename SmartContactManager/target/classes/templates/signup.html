@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="baze::layout(~{::section})">
+<head>
+	<meta charset="UTF-8" />
+	<title th:text="${title}">Document</title>
+</head>
+<body>
+	 <section>
+	 <div class="container">
+	 <div class="row">
+	 <div class="col-md-8 offset-md-2">
+	<div class="my-card mt-3">
+	<h1 th:text="${msg}"></h1>
+		<h1 class="text-center">Sign-up Here</h1>
+		<!-- 'novalidate' turns off the HTML's validation  -->
+	<form novalidate th:action="@{/registered/}" method="post" th:object="${usar}" ><!-- this is the empty object came from controller and made the form of 'usar' type
+	                                                                             it also makes the form of 'usar'  type & transmit submitted data -->
+	
+	
+	<!--below is name field -->
+	<!--  Individual fields are mapped using the th:field=”*{name}” attribute, where the name is the matching property of the object. -->
+	 <div class="mb-3">
+    <label for="name_field" class="form-label" >your name</label>
+    
+    <input 
+    type="text" 
+     class="form-control" 
+    id="name_field" 
+    aria-describedby="nameHelp"
+    palceholder="example..espy"
+    th:field="*{name}"
+         th:value="${usar.name}"
+        th:classappend="${#fields.hasErrors('name')?'is-invalid':'form-control'}"
+    
+    required>
+     <div  th:each="un : ${#fields.errors('name')}"  th:text="${un}" class="invalid-feedback"></div>
+    
+    <div id="nameHelp" class="form-text">We need you beautiful name .</div>
+  </div>
+  <!-- above is name field -->
+  
+  <!--below is email field -->
+	 <div class="mb-3">
+    <label for="email1_field" class="form-label">Email address</label>
+    
+    <input 
+    type="email" 
+     class="form-control" 
+    id="email1_field" 
+    aria-describedby="emailHelp"
+    palceholder="eample..goa232@gmail.com"
+    th:field="*{email}"
+        th:value="${usar.email}"
+            th:classappend="${#fields.hasErrors('email')?'is-invalid':'form-control'}"
+    
+    required>
+         <div  th:each="em : ${#fields.errors('email')}"  th:text="${em}" class="invalid-feedback"></div>
+    
+    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+  </div>
+  <!-- above is email field -->
+  
+    <!--below is password field -->
+	 <div class="mb-3">
+    <label for="password_field" class="form-label">password</label>
+    
+    <input 
+ type="password" 
+class="form-control" 
+ id="password_field" 
+aria-describedby="passwordHelp"
+  palceholder="eample..#GoAoa23!c"
+th:field="*{password}"
+ th:value="${usar.password}"
+th:classappend="${#fields.hasErrors('password')?'is-invalid':'form-control'}"
+ required>
+ <div  th:each="psd : ${#fields.errors('password')}"  th:text="${psd}" class="invalid-feedback"></div>
+    
+<div id="passwordHelp" class="form-text">We'll never share your password too with anyone else.</div>
+  </div>
+  <!-- above is password field -->
+  
+  
+  <!-- below is user's about -->
+  <div class="form-group ">
+<textarea th:field="*{about}" placeholder="say something about your self ! :-)"   id="about"    rows="1" class="form-control"></textarea>  
+</div>
+  <!-- above is user's about -->
+
+  <!-- below is terms & condition -->
+<div class="form-group form-check">
+<input type ="checkbox"
+name="agreement"
+class="form-check-input"
+id="agrement"/>
+<label for="agrement">Accept terms and conditions</label>
+</div>
+  <!-- above is terms & condition -->
+
+  <!-- above is user's about -->
+  <div class="container text-center">
+  <button type="submit" class="btn bg-primary text-white">Sign-Up</button>
+     <button type="reset" class="btn bg-warning">Reset</button>
+  
+  </div>
+	</form>
+	</div></div></div></div>
+	
+	
+	</section>
+</body>
+</html>

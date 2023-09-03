@@ -1,0 +1,43 @@
+<!doctype html>
+ <html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="users/userBase::baze(~{::section})">
+
+<head>
+	<meta charset="UTF-8" />
+	<title th:text="${title}">Settings</title>
+</head>
+<body>
+	<section>
+ 	<h5>SETTINGS  </h5>
+	<div class="container">
+	<!-- <div  th:if="${session.msg}" th:classappend="${session.msg.type}" class="alert alert-primary  text-center"role="alert">
+<p th:text="${session.msg.content}"></p>
+<th:block th:text="${#session.removeAttribute('msg')}"></th:block>
+</div> -->
+ <div class="card-body">
+  	<div  >
+   	 	 <div class="container">
+   	 	 <div class="row">
+   	 	 <div class="col-md-12">
+   	 	 <div class="card">
+   	 	 <div class="card-body">
+    	 	 
+   	 	 </div>
+   	 	    <a th:href="@{/user/psdotp/}" class="item"><i class="fas fa-cogs"></i>change password</a>
+   	 	  
+   	 	 
+    	 	     	 	 	
+   	 	 
+   	 	 
+   	 	 </div>
+   	 	 </div></div></div></div>
+  	  
+  	  
+  	  
+  	 	</div>
+  	 	</div>   
+	
+	</div>
+	</section>
+</body>
+</html>
+ 

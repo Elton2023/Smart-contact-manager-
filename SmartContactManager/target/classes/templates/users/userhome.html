@@ -1,0 +1,12 @@
+<!doctype html>
+ <html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="users/userBase::baze(~{::section})">  
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+</head>
+<body>
+	<section>
+	<h1>Welcome  mr<p th:text="${usar.name}"></p> </h>
+	</section>
+</body>
+</html>

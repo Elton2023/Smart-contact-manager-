@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="users/userBase::baze(~{::section})">
+<head>
+	<meta charset="UTF-8" />
+	<title th:text="${title}">User-Home</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	
+</head>
+<body>
+
+<section>
+	<h1>welcome to Smart Contact Manager Mr <a th:text="${usar.name}"></a></h1>
+	<h3><a th:href="@{/logout}">LOGOUT</a></h3>
+	<script>
+	alert('this is home page')
+	</script>
+	</section>
+</body>
+</html>

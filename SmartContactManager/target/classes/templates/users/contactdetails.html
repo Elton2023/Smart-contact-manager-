@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="users/userBase::baze(~{::section})">
+<head>
+ 	<title th:text="${title}">Document</title>
+</head>
+<body>
+        
+ <section>  
+ <div class="card-body" th:if="${details}">
+  	<div th:each="r:${details}" >
+  	<h1>contact name is <p th:text="${details.contactname}"></p> </h3> 
+  	 	<h3>contact nick name is :<p th:text="${details.nickname}"></p> </h3> 
+  	 	<h3>contact job is: <p th:text="${details.job}"></p> </h3> 
+  	 	<h3>contact email is: <p th:text="${details.email}"></p> </h3> 
+  	 	<h3>contact phone_number is :<p th:text="${details.phonenumber}"></p> </h3> 
+  	 	<h3>contact discription is: <p th:text="${details.discription}"></p> </h3> 
+  	 	</div>
+  	 	</div>   
+  	 	<a th:onclick="|deletecontact(${details.cid})|" class="btn btn-danger btn-sm">delete</a> 
+  	 	
+  
+  	 	     <form  method="post" th:action="@{'/user/update/'+${details.cid}}" class="mt-2" >
+  	 	       <button  type="submit" class="btn btn-primary btn-sm">update</button>
+  	 	</form>
+  	 	  <h1 class="text-center p-3 bg-danger" th:unless="${details}">Access to this information is denied</h1>
+  	 	
+  	</section>  
+</body>
+</html>
+</html>
