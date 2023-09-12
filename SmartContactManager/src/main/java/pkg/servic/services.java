@@ -47,7 +47,7 @@ and also turn off smart secuty on google accout
 			@Override
 			protected PasswordAuthentication getPasswordAuthentication() {
 				// TODO Auto-generated method stub
-				return  new PasswordAuthentication("email","$ psd");
+				return  new PasswordAuthentication("email","$ psd"); //<------------------------------set your credentials here
 			}
 			
 		} );
