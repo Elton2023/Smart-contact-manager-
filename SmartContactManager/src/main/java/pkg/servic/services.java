@@ -38,7 +38,7 @@ public class services  {
 		p.put("mail.smtp.auth","true");
 
 /**
-while doing this dont forget to turn of you antivirs *
+while doing this dont forget to turn off you antivirs *
 and also turn off smart secuty on google accout
 */
 		
