@@ -21,7 +21,7 @@ public class services  {
 
 	public boolean sendemail(String subject,String to,String msg) {
 		boolean f=false;
-        String from ="senders email here";
+        String from ="senders email here";//<--------------------------------ENter your email here
 
 		
 		//get the system properties
